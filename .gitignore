@@ -1,0 +1,12 @@
+# Secretos y configuración local de endpoints
+.env
+*.env.local
+
+# Paquetes comprimidos
+*.zip
+
+# Ficheros generados en ejecución
+.estado_panel.json
+agente.log
+index.html
+index.html.tmp

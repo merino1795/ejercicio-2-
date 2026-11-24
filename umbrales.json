@@ -1,0 +1,8 @@
+{
+  "descripcion": "Umbrales de monitorización de recursos - Grupo 7",
+  "aviso": 60,
+  "critico": 85,
+  "caido_s": 30,
+  "expirar_s": 0,
+  "historial_grafica": 20
+}
