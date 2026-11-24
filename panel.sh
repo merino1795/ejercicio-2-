@@ -398,7 +398,7 @@ evaluar_y_enviar_alertas() {
       jq . <<< "$alerta"
     else
       local resp code
-      if resp="$(curl -sS --max-time 10 -w $'\n%{http_code}' \
+      if resp="$(curl -sS --max-time 15 -w $'\n%{http_code}' \
         -X POST \
         -H "Content-Type: application/json" \
         -H "X-Canal: $CANAL_ALERTAS" \
@@ -1062,7 +1062,7 @@ actualizar_panel() {
   if [[ -n "$DESDE_ARCHIVO" ]]; then
     raw_json="$(cat "$DESDE_ARCHIVO")"
   else
-    if ! raw_json="$(curl -sS --max-time 10 "$SYNC_URL")"; then
+    if ! raw_json="$(curl -sS --compressed --max-time 30 "$SYNC_URL")"; then
       echo "[ERROR] No se pudo consultar $SYNC_URL" >&2
       return 1
     fi
